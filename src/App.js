@@ -17,7 +17,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<MeetsList meets={meets} setMeets={setMeets} />} />
-          <Route path='/meets' element={<MeetsPanel meets={meets} setMeets={setMeets} />} />
           <Route path='/meets' element={<MeetsForm setMeets={setMeets} />} />
         </Routes>
 

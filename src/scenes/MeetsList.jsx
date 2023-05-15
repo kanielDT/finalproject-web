@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import MeetsPanel from "./MeetsPanel"
+import { Container, Row, Col, } from "react-bootstrap"
 
 
 export default function ({ meets, setMeets }) {
@@ -13,17 +14,23 @@ export default function ({ meets, setMeets }) {
                 setMeets(data)
             })
             .catch(alert)
-        console.log(meets)
     }, [])
 
     return (
         <>
-            <h1>Upcoming Meets</h1>
-            {!meets
-                ? "Loading..."
-                : meets.map(meet => <MeetsPanel key={meets.id} meets={meet} />
-                )
-            }
+            <Container>
+                <h1>Upcoming Meets</h1>
+                <Row>
+
+                    {!meets
+                        ? "Loading..."
+                        : meets.map(meet =>
+                            <MeetsPanel key={meets.id} meets={meet} />
+                        )
+                    }
+
+                </Row>
+            </Container>
         </>
     )
 }
