@@ -3,7 +3,7 @@ import { Card, Container, Row, Col } from "react-bootstrap";
 export default function MeetsPanel({ meets }) {
     return (
         <Col style={{ width: '18rem' }}>
-            <div>
+            <Card>
                 <h2 className="mb-2 text-muted">{meets.hostName} </h2>
                 <h3 className="mb-2 text-muted"> {meets.title} </h3>
                 <Card.Text>
@@ -12,8 +12,10 @@ export default function MeetsPanel({ meets }) {
                     <p className="mb-2 text-muted"> Phone #: {meets.PhoneNumber} </p>
                     <p className="mb-2 text-muted"> Date: {meets.date} </p>
                     <p className="mb-2 text-muted"> Time: {meets.time} </p>
+                    <p className="mb-2 text-muted"> { } </p>
+                    <button>delete</button>
                 </Card.Text>
-            </div>
+            </Card>
         </Col>
     )
 }

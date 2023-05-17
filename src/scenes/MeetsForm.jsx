@@ -27,14 +27,19 @@ export default function MeetsForm({ setMeets }) {
             .then(resp => resp.json())
             .then(data => {
                 if (data.message) {
+                    //sjccess
                     alert(data.message)
-                    return
+                    navigate("/")
+
+                } else {
+                    // omg we crashed
+                    alert(data)
                 }
-                setMeets(data)
+
+                //setMeets(data)
             })
 
             .catch(alert)
-        navigate("/")
     }
 
     return (
