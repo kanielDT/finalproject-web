@@ -3,7 +3,7 @@ import { useState } from "react"
 import { Form } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
 
-export default function MeetsForm({ setMeets }) {
+export default function MeetsForm() {
 
     const [title, setTitle] = useState("")
     const [hostName, setHostName] = useState("")
