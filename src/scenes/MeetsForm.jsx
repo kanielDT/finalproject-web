@@ -12,6 +12,7 @@ export default function MeetsForm() {
     const [description, setDescription] = useState("")
     const [date, setDate] = useState("")
     const [time, SetTime] = useState("")
+    const [type, setType] = useState("")
     const navigate = useNavigate()
 
     const handleAddMeets = (e) => {
@@ -22,7 +23,7 @@ export default function MeetsForm() {
             headers: {
                 "Content-type": "application/json"
             },
-            body: JSON.stringify({ title, hostName, phoneNumber, location, description, date, time })
+            body: JSON.stringify({ title, hostName, phoneNumber, location, description, date, time, type })
         })
             .then(resp => resp.json())
             .then(data => {
@@ -125,11 +126,23 @@ export default function MeetsForm() {
 
                 <Form.Group>
                     <Form.Select htmlFor="Type of car" className="dropdown">
-                        <option value="Type Of Meet"></option>
-                        <option value="Euro">Euro 🏎️</option>
-                        <option value="JDM">JDM 🏎️</option>
-                        <option value="American muscle">American Muscle 🏎️</option>
-                        <option value="mixed carmeet">Mixed carmeet 🏎️🏎️🏎️</option>
+                        <option type="Type Of Meet"></option>
+                        <option type="Euro"
+                            value={type}
+                            onVolumeChange={(e) => { setType(e.type.target) }}>Euro 🏎️
+                        </option>
+                        <option type="JDM"
+                            value={type}
+                            onVolumeChange={(e) => { setType(e.type.target) }}>JDM 🏎️
+                        </option>
+                        <option type="American muscle"
+                            value={type}
+                            onVolumeChange={(e) => { setType(e.type.target) }}>American Muscle 🏎️
+                        </option>
+                        <option type="mixed carmeet"
+                            value={type}
+                            onVolumeChange={(e) => { setType(e.type.target) }}>Mixed carmeet 🏎️🏎️🏎️
+                        </option>
                     </Form.Select>
                 </Form.Group>
 

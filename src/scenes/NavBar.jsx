@@ -1,31 +1,16 @@
-import { Navbar, NavDropdown, Container, Nav } from "react-bootstrap"
+import { Dropdown, Button, ButtonGroup } from "react-bootstrap"
 
 export default function NavBar() {
     return (
-        <Navbar variant="dark" bg="dark" expand="lg">
-            <Container fluid>
-                <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-                <Navbar.Toggle aria-controls="navbar-dark-example" />
-                <Navbar.Collapse id="navbar-dark-example">
-                    <Nav>
-                        <NavDropdown
-                            id="nav-dropdown-dark-example"
-                            title="Dropdown"
-                            menuVariant="dark"
-                        >
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">
-                                Another action
-                            </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">
-                                Separated link
-                            </NavDropdown.Item>
-                        </NavDropdown>
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
-    )
+        <Dropdown className="dp-1s" as={ButtonGroup}>
+            <Button variant="success">Split Button</Button>
+
+            <Dropdown.Toggle split variant="success" id="dropdown-split-basic" />
+
+            <Dropdown.Menu>
+                <Dropdown.Item href="/">Meets List</Dropdown.Item>
+                <Dropdown.Item href="/meets">~Create a Meet-up</Dropdown.Item>
+            </Dropdown.Menu>
+        </Dropdown>
+    );
 }

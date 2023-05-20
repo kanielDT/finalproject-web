@@ -1,4 +1,4 @@
-import { Card, Container, Row, Col } from "react-bootstrap";
+import { Card, Col } from "react-bootstrap";
 import MeetsDelete from "./MeetsDelete";
 
 export default function MeetsPanel({ setMeets, meets, }) {
@@ -14,7 +14,7 @@ export default function MeetsPanel({ setMeets, meets, }) {
                         <p className="mb-2 text-muted"> Phone #: {meets.PhoneNumber} </p>
                         <p className="mb-2 text-muted"> Date: {meets.date} </p>
                         <p className="mb-2 text-muted"> Time: {meets.time} </p>
-                        <p className="mb-2 text-muted"> { } </p>
+                        <p className="mb-2 text-muted"> {meets.type} </p>
                         <MeetsDelete setMeets={setMeets} meetId={meets._id} />
                     </Card.Text>
                 </Card.Body>

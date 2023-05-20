@@ -25,7 +25,6 @@ export default function MeetsList({ meets, setMeets }) {
                     {!meets
                         ? "Loading..."
                         : meets.map(meet => {
-                            console.log(meet)
                             return <MeetsPanel setMeets={setMeets} key={meet._id} meets={meet} />
                         }
                         )
