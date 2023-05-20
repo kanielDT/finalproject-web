@@ -1,6 +1,8 @@
 import { useEffect } from "react"
 import MeetsPanel from "./MeetsPanel"
 import { Container, Row } from "react-bootstrap"
+import NavBar from "./NavBar"
+import Footer from "./Footer"
 
 
 export default function MeetsList({ meets, setMeets }) {
@@ -18,20 +20,26 @@ export default function MeetsList({ meets, setMeets }) {
 
     return (
         <>
-            <Container>
-                <h1>Creek Car-Meets</h1>
-                <Row>
+            {/* <NavBar /> */}
+            <div className="my-events">
+                <Container>
+                    <div className="text-center text-danger">
+                        <h1>Creek Car-Meets</h1>
+                    </div>
+                    <Row>
 
-                    {!meets
-                        ? "Loading..."
-                        : meets.map(meet => {
-                            return <MeetsPanel setMeets={setMeets} key={meet._id} meets={meet} />
+                        {!meets
+                            ? "Loading..."
+                            : meets.map(meet => {
+                                return <MeetsPanel setMeets={setMeets} key={meet._id} meets={meet} />
+                            }
+                            )
                         }
-                        )
-                    }
 
-                </Row>
-            </Container>
+                    </Row>
+                </Container>
+            </div>
+            {/* <Footer /> */}
         </>
     )
 }

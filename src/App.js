@@ -16,14 +16,16 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path='/' element={<MeetsList meets={meets} setMeets={setMeets} />} />
-          <Route path='/meets' element={<MeetsForm setMeets={setMeets} />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+      <div>
+        <BrowserRouter>
+          {/* <NavBar /> */}
+          <Routes>
+            <Route path='/' element={<MeetsList meets={meets} setMeets={setMeets} />} />
+            <Route path='/meets' element={<MeetsForm setMeets={setMeets} />} />
+          </Routes>
+          {/* <Footer /> */}
+        </BrowserRouter>
+      </div>
     </>
   );
 }

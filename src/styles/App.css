@@ -1,12 +1,25 @@
-:root {
-    background-image: url("https://i.ytimg.com/vi/WHWToz-O41w/maxresdefault.jpg");
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.my-events {
+    padding: 80px 0;
+    background-image: url("../../public/images/Background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
 }
 
-/* div.container {
-    background-color: aquamarine;
-} */
+.container {
+    background-color: rgba(0, 0, 0, 0.46)
+}
 
 div.card {
-    margin-top: 20px;
+    margin-top: 45px;
+    margin: 15px;
+    padding: 25px;
+}
 
+h1,
+h2,
+h3 {
+    font-family: "Nunito Sans";
 }
