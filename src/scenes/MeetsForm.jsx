@@ -1,7 +1,7 @@
 import React from "react"
 import { useState } from "react"
-import { Form } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
+import { Form, Container, Row, Col, Dropdown, Button, ButtonGroup } from "react-bootstrap"
 
 export default function MeetsForm() {
 
@@ -45,112 +45,128 @@ export default function MeetsForm() {
 
     return (
         <>
-            <h1 className="h1-Fomr">Creek Meet Form</h1>
-            <Form onSubmit={handleAddMeets} sm={12} med={6} lg={4} className="Form" >
-                <Form.Group>
-                    <label htmlFor="title">Name of Meet
-                        <input type="text"
-                            value={title}
-                            onChange={(e) => { setTitle(e.target.value) }}
-                        />
-                    </label>
-                </Form.Group>
+            <div className="background" >
+                <Container>
+                    <Dropdown className="dp-1s" as={ButtonGroup} >
+                        <Button className="bg-dark">Menu</Button>
 
-                <br />
+                        <Dropdown.Toggle className="bg-dark" />
 
-                <Form.Group>
-                    <label htmlFor="hostName">Host:
-                        <input
-                            type="text"
-                            value={hostName}
-                            onChange={(e) => { setHostName(e.target.value) }} />
-                    </label>
-                </Form.Group>
+                        <Dropdown.Menu className="bg-dark" >
+                            <Dropdown.Item href="/" className="text-white">Meets List</Dropdown.Item>
+                            <Dropdown.Item href="/meets" className="text-white">~Create a Meet-up</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                    <h1 className="h1-Form">Creek Meet Form</h1>
+                    <Form onSubmit={handleAddMeets} sm={12} med={6} lg={4} className="Form" >
+                        <Row>
+                            <Col>
+                                <Form.Group>
+                                    <Form.Label htmlFor="title"><h3>Name of Meet</h3>
+                                        <Form.Control type="text"
+                                            value={title}
+                                            onChange={(e) => { setTitle(e.target.value) }}></Form.Control>
+                                    </Form.Label>
+                                </Form.Group>
+                            </Col>
+                            <br />
+                            <Col>
+                                <Form.Group>
+                                    <Form.Label htmlFor="hostName"><h3>Host:</h3>
+                                        <Form.Control
+                                            type="text"
+                                            value={hostName}
+                                            onChange={(e) => { setHostName(e.target.value) }}></Form.Control>
+                                    </Form.Label>
+                                </Form.Group>
+                            </Col>
+                        </Row>
 
-                <br />
+                        <br />
 
-                <Form.Group>
-                    <label htmlFor="phoneNumber">Phone#:
-                        <input
-                            type="text"
-                            value={phoneNumber}
-                            onChange={(e) => { setPhoneNumber(e.target.value) }} />
-                    </label>
-                </Form.Group>
+                        {/* <Form.Group>
+                        <label htmlFor="phoneNumber">Phone#:
+                            <input
+                                type="text"
+                                value={phoneNumber}
+                                onChange={(e) => { setPhoneNumber(e.target.value) }} />
+                        </label>
+                    </Form.Group> */}
 
-                <br />
+                        <br />
 
-                <Form.Group>
-                    <label htmlFor="location">Location:
-                        <input
-                            type="text"
-                            value={location}
-                            onChange={(e) => { setLocation(e.target.value) }} />
-                    </label>
-                </Form.Group>
+                        <Row>
+                            <Col>
+                                <Form.Group>
+                                    <Form.Label htmlFor="location"><h3>Location:</h3>
+                                        <Form.Control
+                                            type="text"
+                                            value={location}
+                                            onChange={(e) => { setLocation(e.target.value) }}></Form.Control>
+                                    </Form.Label>
+                                </Form.Group>
+                            </Col>
+                            <br />
 
-                <br />
 
-                <Form.Group>
-                    <label htmlFor="description">Description:
-                        <input
-                            type="text"
-                            value={description}
-                            onChange={(e) => { setDescription(e.target.value) }} />
-                    </label>
-                </Form.Group>
+                            <br />
 
-                <br />
+                            <Col>
+                                <Form.Group>
+                                    <Form.Label htmlFor="date"><h3>Meet Date:</h3>
+                                        <Form.Control
+                                            type="text"
+                                            value={date}
+                                            onChange={(e) => { setDate(e.target.value) }}></Form.Control>
+                                    </Form.Label>
+                                </Form.Group>
+                            </Col>
+                        </Row>
 
-                <Form.Group>
-                    <label htmlFor="date">Meet Date:
-                        <input
-                            type="text"
-                            value={date}
-                            onChange={(e) => { setDate(e.target.value) }} />
-                    </label>
-                </Form.Group>
+                        <br />
 
-                <br />
+                        <Row>
+                            <Col>
+                                <Form.Group>
+                                    <Form.Label htmlFor="time"><h3>Meet Time:</h3>
+                                        <Form.Control
+                                            type="text"
+                                            value={time}
+                                            onChange={(e) => { SetTime(e.target.value) }}></Form.Control>
+                                    </Form.Label>
+                                </Form.Group>
+                            </Col>
 
-                <Form.Group>
-                    <label htmlFor="time">Meet Time:
-                        <input
-                            type="text"
-                            value={time}
-                            onChange={(e) => { SetTime(e.target.value) }} />
-                    </label>
-                </Form.Group>
+                            <br />
 
-                <br />
+                            <Col>
+                                <Form.Group>
+                                    <Form.Label htmlFor="Type/Genre of Cars"><h3>Type/Genre of Cars:</h3>
+                                        <Form.Control
+                                            type="text"
+                                            value={type}
+                                            onChange={(e) => { setType(e.target.value) }}></Form.Control>
+                                    </Form.Label>
+                                </Form.Group>
+                            </Col>
+                        </Row>
+                        <br />
 
-                <Form.Group>
-                    <Form.Select htmlFor="Type of car" className="dropdown">
-                        <option type="Type Of Meet"></option>
-                        <option type="Euro"
-                            value={type}
-                            onVolumeChange={(e) => { setType(e.type.target) }}>Euro 🏎️
-                        </option>
-                        <option type="JDM"
-                            value={type}
-                            onVolumeChange={(e) => { setType(e.type.target) }}>JDM 🏎️
-                        </option>
-                        <option type="American muscle"
-                            value={type}
-                            onVolumeChange={(e) => { setType(e.type.target) }}>American Muscle 🏎️
-                        </option>
-                        <option type="mixed carmeet"
-                            value={type}
-                            onVolumeChange={(e) => { setType(e.type.target) }}>Mixed carmeet 🏎️🏎️🏎️
-                        </option>
-                    </Form.Select>
-                </Form.Group>
+                        <Form.Group>
+                            <Form.Label htmlFor="description"><h3>Description:</h3>
+                                <Form.Control
+                                    type="text"
+                                    value={description}
+                                    onChange={(e) => { setDescription(e.target.value) }}></Form.Control>
+                            </Form.Label>
+                        </Form.Group>
 
-                <br />
+                        <input type="submit" value="🛞 Add Meet 🛞" className="input-align" />
 
-                <input type="submit" value="🛞 Add Meet 🛞" />
-
-            </Form>
+                    </Form>
+                </Container>
+                <footer className="text-white text-center">&copy;2023 Kaniel Tapper</footer>
+            </div>
         </>
     )
 }

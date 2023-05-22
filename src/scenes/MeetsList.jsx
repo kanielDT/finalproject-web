@@ -1,8 +1,6 @@
 import { useEffect } from "react"
 import MeetsPanel from "./MeetsPanel"
-import { Container, Row } from "react-bootstrap"
-import NavBar from "./NavBar"
-import Footer from "./Footer"
+import { Container, Row, Dropdown, ButtonGroup, Button } from "react-bootstrap"
 
 
 export default function MeetsList({ meets, setMeets }) {
@@ -12,7 +10,7 @@ export default function MeetsList({ meets, setMeets }) {
         fetch("https://car-meets-kdt.web.app/meets")
             .then(resp => resp.json())
             .then(data => {
-                // console.log(data)
+                console.log(data)
                 setMeets(data)
             })
             .catch(alert)
@@ -20,14 +18,20 @@ export default function MeetsList({ meets, setMeets }) {
 
     return (
         <>
-            {/* <NavBar /> */}
             <div className="my-events">
                 <Container>
-                    <div className="text-center text-danger">
-                        <h1>Creek Car-Meets</h1>
-                    </div>
-                    <Row>
+                    <Dropdown className="dp-1s" as={ButtonGroup} >
+                        <Button className="bg-dark">Menu</Button>
 
+                        <Dropdown.Toggle className="bg-dark" />
+
+                        <Dropdown.Menu className="bg-dark" >
+                            <Dropdown.Item href="/" className="text-white">Meets List</Dropdown.Item>
+                            <Dropdown.Item href="/meets" className="text-white">~Create a Meet-up</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                    <h1 className="text-center">Creek Car Meets</h1>
+                    <Row>
                         {!meets
                             ? "Loading..."
                             : meets.map(meet => {
@@ -35,11 +39,10 @@ export default function MeetsList({ meets, setMeets }) {
                             }
                             )
                         }
-
                     </Row>
                 </Container>
+                <footer className="text-white text-center">&copy;2023 Kaniel Tapper</footer>
             </div>
-            {/* <Footer /> */}
         </>
     )
 }
