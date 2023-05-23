@@ -31,7 +31,7 @@ export default function MeetsList({ meets, setMeets }) {
                         </Dropdown.Menu>
                     </Dropdown>
                     <h1 className="text-center">Creek Car Meets</h1>
-                    <Row>
+                    <Row className="d-flex justify-content-center ">
                         {!meets
                             ? "Loading..."
                             : meets.map(meet => {
@@ -41,7 +41,7 @@ export default function MeetsList({ meets, setMeets }) {
                         }
                     </Row>
                 </Container>
-                <footer className="text-white text-center">&copy;2023 Kaniel Tapper</footer>
+                <footer className=" mt-5 text-white text-center">&copy;2023 Kaniel Tapper</footer>
             </div>
         </>
     )

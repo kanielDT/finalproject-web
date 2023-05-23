@@ -13,6 +13,7 @@ export default function MeetsForm() {
     const [date, setDate] = useState("")
     const [time, SetTime] = useState("")
     const [type, setType] = useState("")
+    const [image, setImage] = useState("")
     const navigate = useNavigate()
 
     const handleAddMeets = (e) => {
@@ -23,7 +24,7 @@ export default function MeetsForm() {
             headers: {
                 "Content-type": "application/json"
             },
-            body: JSON.stringify({ title, hostName, phoneNumber, location, description, date, time, type })
+            body: JSON.stringify({ title, hostName, phoneNumber, location, description, date, time, type, image })
         })
             .then(resp => resp.json())
             .then(data => {
@@ -152,20 +153,35 @@ export default function MeetsForm() {
                         </Row>
                         <br />
 
-                        <Form.Group>
-                            <Form.Label htmlFor="description"><h3>Description:</h3>
-                                <Form.Control
-                                    type="text"
-                                    value={description}
-                                    onChange={(e) => { setDescription(e.target.value) }}></Form.Control>
-                            </Form.Label>
-                        </Form.Group>
+                        <Row>
+                            <Col>
+                                <Form.Group>
+                                    <Form.Label htmlFor="description"><h3>Description:</h3>
+                                        <Form.Control
+                                            type="text"
+                                            value={description}
+                                            onChange={(e) => { setDescription(e.target.value) }}></Form.Control>
+                                    </Form.Label>
+                                </Form.Group>
+                            </Col>
 
-                        <input type="submit" value="🛞 Add Meet 🛞" className="input-align" />
+                            <Col>
+                                <Form.Group>
+                                    <Form.Label htmlFor="image"><h3>Image:</h3>
+                                        <Form.Control
+                                            type="text"
+                                            value={image}
+                                            onChange={(e) => { setImage(e.target.value) }} />
+                                    </Form.Label>
+                                </Form.Group>
+                            </Col>
+                        </Row>
+
+                        <input type="submit" value="🛞 Add Meet 🛞" className=" button-effect input-align" />
 
                     </Form>
                 </Container>
-                <footer className="text-white text-center">&copy;2023 Kaniel Tapper</footer>
+                <footer className="  text-white text-center">&copy;2023 Kaniel Tapper</footer>
             </div>
         </>
     )
