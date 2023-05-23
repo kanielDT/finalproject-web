@@ -5,10 +5,10 @@ export default function MeetsPanel({ setMeets, meets, image }) {
     return (
         <Col sm={12} md={6} lg={4} >
             <Card className="pn">
-                <h2 >{meets.hostName} </h2>
-                <h3 > {meets.title} </h3>
                 <Image fluid
                     src={`./images/events/${meets.image}`} />
+                <h2 >{meets.hostName} </h2>
+                <h3 > {meets.title} </h3>
                 <Card.Body>
                     <Card.Text>
                         <p className="mb-2 text-white"> Description: {meets.description} </p>

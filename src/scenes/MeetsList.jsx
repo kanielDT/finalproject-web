@@ -27,7 +27,7 @@ export default function MeetsList({ meets, setMeets }) {
 
                         <Dropdown.Menu className="bg-dark" >
                             <Dropdown.Item href="/" className="text-white">Meets List</Dropdown.Item>
-                            <Dropdown.Item href="/meets" className="text-white">~Create a Meet-up</Dropdown.Item>
+                            <Dropdown.Item href="/meets" className="text-white">Create a Meet-up</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                     <h1 className="text-center">Creek Car Meets</h1>

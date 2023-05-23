@@ -55,7 +55,7 @@ export default function MeetsForm() {
 
                         <Dropdown.Menu className="bg-dark" >
                             <Dropdown.Item href="/" className="text-white">Meets List</Dropdown.Item>
-                            <Dropdown.Item href="/meets" className="text-white">~Create a Meet-up</Dropdown.Item>
+                            <Dropdown.Item href="/meets" className="text-white">Create a Meet-up</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                     <h1 className="h1-Form">Creek Meet Form</h1>
@@ -181,7 +181,7 @@ export default function MeetsForm() {
 
                     </Form>
                 </Container>
-                <footer className="  text-white text-center">&copy;2023 Kaniel Tapper</footer>
+                <footer className=" mt-5  text-white text-center">&copy;2023 Kaniel Tapper</footer>
             </div>
         </>
     )
